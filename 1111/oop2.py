@@ -51,7 +51,7 @@ class Child(Parent):
 nick1 = Grandparent()
 nick2 = Parent()
 nick3 = Child()'''
-class Computer:  #множинне успадкування
+'''class Computer:  #множинне успадкування
 
     def calculate(self):
         print("Calculating…")
@@ -71,6 +71,14 @@ class SmartPhone(Display, Computer):
 iphone = SmartPhone()
 iphone.calculate()
 iphone.display()
-iphone.print_info()
+iphone.print_info()'''
 
-
+class Class1:
+    def x1(self):
+        print("Class1" )
+class Class2(Class1):
+    def x2(self):
+        super().x1()
+        print("Class2" )
+name = Class2()
+name.x2()
