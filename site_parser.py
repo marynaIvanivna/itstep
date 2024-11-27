@@ -57,3 +57,23 @@ if response.status_code == 200:
     soup_list = soup.find_all("span",{"data-test":"text-cdp-price-display"})
     for elem in soup_list:
         print(elem.text)'''
+
+'''#--Витягніть всі цитати зі сторінки http://quotes.toscrape.com
+from bs4 import BeautifulSoup
+import requests
+url = 'http://quotes.toscrape.com'
+response = requests.get(url)
+soup = BeautifulSoup(response.content, 'html.parser')
+quotes = soup.find_all('span', {'class': "text"})
+for quote in quotes:
+    print(quote.text)'''
+
+'''#--Витягніть всіх авторів цитат зі сайту http://quotes.toscrape.com
+from bs4 import BeautifulSoup
+import requests
+url = 'http://quotes.toscrape.com'
+response = requests.get(url)
+soup = BeautifulSoup(response.content, 'html.parser')
+quotes = soup.find_all('small', {'class': "author"})
+for quote in quotes:
+    print(quote.text)'''
